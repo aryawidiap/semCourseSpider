@@ -1,0 +1,186 @@
+<form action="courselist.asp" method="post" name="thisform" onsubmit="return(chkval())">
+
+    <table width="87%" align="center" class="standard-table2">
+        <tbody>
+
+            <tr>
+                <td>
+                    <font face="Times New Roman" color="#000080"><b>Academic Year </b></font>
+                    &nbsp;
+
+                    <select name='cos_setyear_q' id='cos_setyear_q' class='sel_bg'
+                        onchange='smtr(thisform.cos_setyear_q.value,thisform.cos_setterm_q.value);'>
+                        <option value='112' selected>112</option>
+                    </select>
+                    &nbsp;
+                    <font face="Times New Roman" color="#000080"><b>Semester</b></font>
+                    <select name="cos_setterm_q" class="sel_bg" id="cos_setterm_q"
+                        onchange="smtr(thisform.cos_setyear_q.value,thisform.cos_setterm_q.value)">
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    &nbsp;
+                    <font face="Times New Roman" color="#000080"><b>Degree</b></font>
+                    <select name="type_no" onchange="typeno(this)" class="sel_bg" id="type_no">
+                        <option value="" selected>All</option>
+                    </select>
+                    &nbsp;
+                    <font face="Times New Roman" color="#000080"><b>Language</b></font>
+                    <select name="chk_eng" class="sel_bg" id="chk_eng">
+                        <option value="E">English - for international students</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>
+                        <font color="#000080" face="Times New Roman">Department/Graduate Institute</font>
+                    </b>
+                    <select name="dept_no_q" class="sel_bg" id="dept_no_q">
+                        <option value="" selected="selected"></option>
+
+                        <option value="EE">EE Computer Science and Information Engineering</option>
+
+                        <option value="EE10">EE10 Computer Science and Information Engineering</option>
+
+                        <option value="EE20">EE20 Computer Science and Information Engineering</option>
+
+                        <option value="EE30">EE30 Computer Science and Information Engineering</option>
+
+                        <option value="EE31">EE31 Computer Science and Information Engineering</option>
+
+                        <option value="EE32">EE32 Computer Science and Information Engineering</option>
+
+                        <option value="EE40">EE40 Computer Science and Information Engineering</option>
+                    </select>
+                    &nbsp;&nbsp;
+                    <b>
+                        <font color="#000080" face="Times New Roman">Year</font>
+                    </b>
+
+                    <select name="cos_year_q" class="sel_bg" id="cos_year_q">
+                        <option value="" selected="selected">All</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>
+                        <font color="#000080" face="Times New Roman">Course Code</font>
+                    </b>
+                    <input name="cos_id_q" type="text" id="cos_id_q" value="" size="8" maxlength="8" />
+                    &nbsp;
+                    <b>
+                        <font color="#000080" face="Times New Roman">Title of Course</font>
+                    </b>
+                    <input name="cos_name_q" type="text" id="cos_name_q" value="" size="25" maxlength="40" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <font face="Times New Roman" color="#000080"><b>Instructor</b></font>
+                    <input name="teacher_name_q" type="text" id="teacher_name_q" value="" size="12" />
+                    &nbsp;
+                    <font face="Times New Roman" color="#000080"><b>Classroom No.</b></font>
+                    <input name="class_name_q" type="text" id="class_name_q" value="" size="12" />
+                    &nbsp;
+                    <font face="Times New Roman" color="#000080"><b>Required/Elective </b></font>
+                    <select name="sel_type" class="sel_bg" id="sel_type">
+                        <option value="">All</option>
+                        <option value="A">Required </option>
+                        <option value="B">Elective</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <font face="Times New Roman" color="#000080"><b>Day</b></font>
+                    <select name="cos_week_S_q" class="sel_bg">
+                        <option value="" selected>All</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                        <option value="7">Sunday</option>
+                    </select>
+                    <font face="Times New Roman" color="#000080"><b>From</b></font>
+                    <select name="cos_week_E_q" class="sel_bg">
+                        <option value="" selected>All</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                        <option value="7">Sunday</option>
+                    </select>
+                    <font face="Times New Roman" color="#000080"><b>To</b></font>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <font face="Times New Roman" color="#000080"><b>Period</b></font>
+                    <select name="cos_sec_S_q" class="sel_bg">
+                        <option value="" selected>All</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <font face="Times New Roman" color="#000080"><b>Start</b></font>
+                    <select name="cos_sec_E_q" class="sel_bg">
+                        <option value="" selected>All</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <font face="Times New Roman" color="#000080"><b>End</b></font>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div align="center">
+                        <input name="Qry" value="Query" type="submit" />
+                        <input name="Clr" value="Reset" type="reset" />
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</form>
