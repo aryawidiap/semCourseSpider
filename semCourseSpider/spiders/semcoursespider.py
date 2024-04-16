@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 import scrapy
 import re
 
@@ -16,18 +15,18 @@ class SemcoursespiderSpider(scrapy.Spider):
         }
     }
     
-    form_data = {
-        'cos_setyear_q': '112',
-        'cos_setterm_q': '2',
-        'chk_eng': 'E',
-        'dept_no_q': 'EE30',
-        'Qry': 'Query',
-    }
 
     def parse(self, response):
+        form_data = {
+            'cos_setyear_q': '112',
+            'cos_setterm_q': '2',
+            'chk_eng': 'E',
+            'dept_no_q': 'EE30',
+            'Qry': 'Query',
+        }
         return scrapy.FormRequest.from_response(
             response,
-            formdata=self.form_data,
+            formdata=form_data,
             clickdata={'name': 'Qry'},
             callback=self.parse_after_form
         )
@@ -52,9 +51,6 @@ class SemcoursespiderSpider(scrapy.Spider):
                 attributeDict[table_data[2].css('::text').get().strip()] = table_data[3].css('::text').extract()
             elif(len(table_data) == 2):
                 attributeDict[table_data[0].css('::text').get().strip()] = table_data[1].css('::text').extract()
-
-        print("====================================")
-        print(attributeDict.keys())
 
         # Assign the desired values from attributeDict to course_item
         course_item = CourseItem()
